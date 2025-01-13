@@ -70,7 +70,7 @@ h1{
 /* Stop flashing */
 .clicked {
     animation: none;
-    background-color: #ffffff; /* Return to original color */
+    background-color: #343a40; /* Return to original color */
 }
 .expanded-nav {
     width: 0;

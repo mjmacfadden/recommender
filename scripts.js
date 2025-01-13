@@ -16,6 +16,14 @@ document.querySelectorAll('.nav-skinny a').forEach(icon => {
     });
 });
 
+// Close any open expanded navigation panels when clicking on the main content
+document.querySelector('.main-content').addEventListener('click', function() {
+    document.querySelectorAll('.expanded-nav').forEach(nav => {
+        nav.classList.remove('open');
+    });
+});
+
+
 //Initialize WYSIIWYG
 const quill = new Quill('#editor', {
     theme: 'snow'
