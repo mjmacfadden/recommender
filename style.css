@@ -91,7 +91,7 @@ h1{
     -webkit-overflow-scrolling: touch;
     background-color: #495057;
     color: white;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 34px;
     height: 100%;
