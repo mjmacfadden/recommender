@@ -67,7 +67,6 @@ const questions = [
     "Tell me about this student. What would you like to include in the letter?",
 ];
 
-// Function to add a message to the chat
 function addMessage(message, type = "question") {
     const messageDiv = document.createElement("div");
     messageDiv.classList.add("d-flex", "mb-3");
@@ -83,7 +82,12 @@ function addMessage(message, type = "question") {
 
     messageDiv.appendChild(bubble);
     chatBody.appendChild(messageDiv);
-    chatContainer.scrollTop = chatContainer.scrollHeight; // Auto-scroll to the bottom
+    
+    // Ensure smooth scrolling to the bottom
+    chatBody.scrollTo({
+        top: chatBody.scrollHeight,
+        behavior: 'smooth'
+    });
 }
 
 // Function to simulate the chatbot thinking
