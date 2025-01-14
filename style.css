@@ -126,6 +126,8 @@ h1{
     padding: 20px 20px 20px 55px;
     overflow: auto; /* Enable scrolling in this section */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+    position: relative;
+    z-index:0;
 }
 .upload-area {
     border: 2px dashed #6c757d;
