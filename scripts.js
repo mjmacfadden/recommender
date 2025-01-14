@@ -39,11 +39,24 @@ icon.addEventListener('click', () => {
 });
 
 
-//CHAT
 
+/*
+"What is the purpose of this letter of recommendation? (e.g., college admission, scholarship, job application, etc.)?",
+"What is the student's full name?",
+"How long have you known the student?",
+"In what capacity do you know the student?",
+"What are the student's strongest academic skills?",
+"What personal qualities or characteristics make this student stand out?",
+"Tell me about this student. What would you like to include in the letter?",
+*/
+
+
+//CHAT
 const chatBody = document.querySelector(".card-body");
 const inputField = document.querySelector(".form-control");
 const sendButton = document.querySelector(".btn");
+const chatContainer = document.querySelector(".expanded-nav"); // Updated to scroll the right container
+const editorDiv = document.querySelector("#editor");
 let currentQuestionIndex = 0;
 const responses = [];
 
@@ -70,7 +83,7 @@ function addMessage(message, type = "question") {
 
     messageDiv.appendChild(bubble);
     chatBody.appendChild(messageDiv);
-    chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to the bottom
+    chatContainer.scrollTop = chatContainer.scrollHeight; // Auto-scroll to the bottom
 }
 
 // Function to simulate the chatbot thinking
@@ -84,7 +97,7 @@ function showThinking(callback) {
     thinkingDiv.appendChild(bubble);
 
     chatBody.appendChild(thinkingDiv);
-    chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to the bottom
+    chatContainer.scrollTop = chatContainer.scrollHeight; // Auto-scroll to the bottom
 
     // Simulate delay, then remove thinking and call callback
     setTimeout(() => {
@@ -109,10 +122,39 @@ function displayNextQuestion() {
 
 // Function to finish the chat
 function finishChat() {
-    addMessage("Thank you! Your responses have been saved.");
+    addMessage("Thank you! Please wait while we generate your letter of recommendation.");
     inputField.disabled = true;
     sendButton.disabled = true;
-    console.log("Final Responses:", responses); // Save these to your backend or process further
+
+    // Show spinner
+    showSpinner();
+
+    // Populate editor after spinner
+    setTimeout(() => {
+        const editorContent = responses
+            .map((response, index) => `${questions[index]} ${response}`)
+            .join("\n\n");
+        editorDiv.textContent = editorContent; // Insert responses into #editor div
+    }, 3000); // Match spinner delay
+}
+
+// Function to show the spinner
+function showSpinner() {
+    const spinnerDiv = document.createElement("div");
+    spinnerDiv.classList.add("d-flex", "justify-content-center", "mb-3");
+    spinnerDiv.innerHTML = `
+        <div class="spinner-border custom-spinner" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    `;
+    chatBody.appendChild(spinnerDiv);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+
+    // Remove spinner after LLM completes its task
+    setTimeout(() => {
+        chatBody.removeChild(spinnerDiv);
+        addMessage("Your letter of recommendation is ready!", "question");
+    }, 3000); // Adjust duration based on processing time
 }
 
 // Event listener for the send button
@@ -130,6 +172,13 @@ sendButton.addEventListener("click", () => {
     // Increment question index and display next question
     currentQuestionIndex++;
     displayNextQuestion();
+});
+
+// Allow pressing "Enter" to send a message
+inputField.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        sendButton.click();
+    }
 });
 
 // Start the chat
