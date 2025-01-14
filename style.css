@@ -16,6 +16,9 @@ body {
 h1{
     font-weight:700;
 }
+.bi-plus-circle{
+    cursor: pointer;
+}
 .gradient{
     background: linear-gradient(to right, #8e44ad, #cd89ea); /* Vibrant purple to orange-red gradient */
     -webkit-background-clip: text; /* Clips background to the text */
@@ -159,5 +162,6 @@ WYSIWYG
 =================================================
 */
 #editor{
-    height: calc(100vh - 340px );
+    height: 100%;
+    max-height: 300px;
 }
