@@ -1,3 +1,9 @@
+body, html {
+    height: 100%;
+    overflow-y: auto; /* Allow vertical scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS devices */
+}
+
 body {
     height: 100vh;
     overflow: hidden;
@@ -75,9 +81,11 @@ h1{
 .expanded-nav {
     width: 0;
     overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     background-color: #495057;
     color: white;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 34px;
     height: 100%;
@@ -87,9 +95,15 @@ h1{
 .expanded-nav.open {
     width: 300px;
 }
+.expanded-nav p{
+    font-size:.8em !important;
+    color:#adb5bd;
+}
 .main-content {
     flex-grow: 1;
     padding: 20px;
+    overflow: auto; /* Enable scrolling in this section */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
 }
 .upload-area {
     border: 2px dashed #6c757d;
