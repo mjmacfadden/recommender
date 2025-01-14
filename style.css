@@ -26,6 +26,9 @@ h1{
     font-weight: bold; /* Optional: Bold text for more vibrancy */
     display: inline-block; /* Ensures proper rendering of the gradient */
 }
+.logo{
+    letter-spacing: -1.5px;
+}
 .nav-skinny {
     width: 35px;
     background-color: #343a40;
