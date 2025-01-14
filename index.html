@@ -24,11 +24,11 @@
         <a href="#" class="icon flash" id="chatIcon" data-target="#chatPanel">
             <i class="bi bi-chat-dots"></i>
         </a>
-        <a href="#" id="fileIcon" data-target="#fileExplorer">
-            <i class="bi bi-folder"></i>
-        </a>
         <a href="#" id="uploadIcon" data-target="#uploadPanel">
             <i class="bi bi-upload"></i>
+        </a>
+        <a href="#" id="fileIcon" data-target="#fileExplorer">
+            <i class="bi bi-folder"></i>
         </a>
         <a href="#" id="settingsIcon" data-target="#settingsMenu">
             <i class="bi bi-gear"></i>
@@ -36,10 +36,10 @@
     </div>
 
     <!-- Expanded Navigation Panels -->
-    <div id="chatPanel" class="expanded-nav">
-            <h5 class="p-3">Letter Wizard</h5>
+    <div class="expanded-nav" id="chatPanel" >
+            <h5 class="p-3 chat-title">Letter Wizard</h5>
             <!-- Chat Body -->
-            <div class="card-body p-3" style="height: calc(100vh - 130px ); overflow-y: auto;">
+            <div class="card-body p-3" style="height: 100%; overflow-y: auto;">
                 <!-- First Question -->
                 <div class="d-flex mb-3">
                     <div class="p-3 bg-light text-dark rounded">
@@ -113,12 +113,12 @@
     <div id="uploadPanel" class="expanded-nav">
         <h5 class="p-3">Upload</h5>
         <div class="p-3">
-            <h6>Letterhead Graphics</h6>
+            <h6>Letterhead Graphic</h6>
             <div class="upload-area mb-4">
                 <p>Drag and drop your letterhead here</p>
                 <button class="btn btn-sm btn-secondary mt-2">Choose File</button>
             </div>
-            <h6>Signature Graphics</h6>
+            <h6>Signature Graphic</h6>
                 <div class="upload-area mb-4">
                     <p>Drag and drop your signature here</p>
                     <button class="btn btn-sm btn-secondary mt-2">Choose File</button>
