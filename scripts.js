@@ -62,8 +62,12 @@ const responses = [];
 
 // Questions for the chat
 const questions = [
-    "What is this letter of recommendation for?",
-    "What is the name of the student?",
+    "What is the purpose of this letter of recommendation? (e.g., college admission, scholarship, job application, etc.)?",
+    "What is the student's full name?",
+    "How long have you known the student?",
+    "In what capacity do you know the student?",
+    "What are the student's strongest academic skills?",
+    "What personal qualities or characteristics make this student stand out?",
     "Tell me about this student. What would you like to include in the letter?",
 ];
 
