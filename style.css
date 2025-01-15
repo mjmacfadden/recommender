@@ -142,6 +142,26 @@ table{
     vertical-align: bottom;
     clear:both;
 }
+.messages div{
+    max-width: 85%;
+    position:relative;
+}
+.messages div::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Position the tail below the div */
+    left: 10px; /* Position the tail horizontally */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 5px; /* Triangular shape */
+    border-color: #fff transparent transparent transparent; /* Match the background color */
+}
+.messages div.bg-primary::after {
+    border-color: #8e44ad transparent transparent transparent; /* Match the background color */
+    right:10px !important;
+    left:auto;
+}
 .chat-title{
     position:absolute;
     top:0;
