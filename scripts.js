@@ -55,7 +55,7 @@ icon.addEventListener('click', () => {
 const chatBody = document.querySelector(".card-body");
 const inputField = document.querySelector(".form-control");
 const sendButton = document.querySelector(".btn");
-const chatContainer = document.querySelector(".expanded-nav"); // Updated to scroll the right container
+const chatContainer = document.querySelector(".chat-wrapper"); // Updated to scroll the right container
 const editorDiv = document.querySelector("#editor");
 let currentQuestionIndex = 0;
 const responses = [];
@@ -86,6 +86,8 @@ function addMessage(message, type = "question") {
 
     messageDiv.appendChild(bubble);
     chatBody.appendChild(messageDiv);
+    
+    chatContainer.scrollTop = chatContainer.scrollHeight;
     
     // Ensure smooth scrolling to the bottom
     chatBody.scrollTo({
@@ -162,6 +164,7 @@ function showSpinner() {
     setTimeout(() => {
         chatBody.removeChild(spinnerDiv);
         addMessage("Your letter of recommendation is ready!", "question");
+        chatContainer.scrollTop = chatContainer.scrollHeight;
     }, 3000); // Adjust duration based on processing time
 }
 
