@@ -73,7 +73,7 @@ const questions = [
 
 function addMessage(message, type = "question") {
     const messageDiv = document.createElement("div");
-    messageDiv.classList.add("d-flex", "mb-3");
+    messageDiv.classList.add("d-flex", "mb-3", "messages");
     if (type === "response") {
         messageDiv.classList.add("justify-content-end");
     }
@@ -97,7 +97,7 @@ function addMessage(message, type = "question") {
 // Function to simulate the chatbot thinking
 function showThinking(callback) {
     const thinkingDiv = document.createElement("div");
-    thinkingDiv.classList.add("d-flex", "mb-3");
+    thinkingDiv.classList.add("d-flex", "mb-3", "messages");
 
     const bubble = document.createElement("div");
     bubble.classList.add("p-3", "bg-light", "text-dark", "rounded");

@@ -111,7 +111,7 @@ h1{
     color:#adb5bd;
 }
 #chatPanel{
-    padding: 0;
+    padding:50px 0 0 0;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -122,10 +122,11 @@ h1{
     overflow-y: auto;
     padding: 16px;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
-    max-height: 100%; /* Adjust based on footer height */
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    height: 100%; /* Adjust based on footer height */
+}
+.messages{
+    vertical-align: bottom;
+    clear:both;
 }
 
 /* Footer (input container) fixed at the bottom */
@@ -148,7 +149,7 @@ h1{
     top:0;
     background-color: #495057;
     display: block;
-    width:100%;
+    width: 100%;
 }
 .main-content {
     flex-grow: 1;
@@ -174,16 +175,17 @@ h1{
 .bg-primary{
     background-color:#8e44ad !important;
 }
+.btn-primary{
+    background-color: #8e44ad;
+    border-color:#8e44ad;
+}
 .btn-primary:hover{
     background-color:#984fb7;
     border-color:#9849b9;
 }
-.btn-primary,
-.btn-primary:active,
-.btn-primary:focus-visible{
+.btn-primary:active{
     background-color: #8e44ad !important;
     border-color:#8e44ad !important;
-    box-shadow:none;
 }
 .btn:disabled{
     background-color: #936ca4 !important;
