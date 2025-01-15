@@ -124,7 +124,7 @@ function displayNextQuestion() {
             showThinking(() => {
                 addMessage(questions[currentQuestionIndex]);
             });
-        }, 500); // Adjust the delay time for "reading"
+        }, 0); // Adjust the delay time for "reading," currently set to 0
     } else {
         finishChat();
     }
