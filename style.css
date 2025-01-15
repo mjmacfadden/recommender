@@ -214,15 +214,13 @@ table{
 .bg-primary{
     background-color:#8e44ad !important;
 }
-.btn-primary{
-    background-color: #8e44ad;
-    border-color:#8e44ad;
-}
 .btn-primary:hover{
     background-color:#984fb7;
     border-color:#9849b9;
 }
-.btn-primary:active{
+.btn-primary,
+.btn-primary:active,
+.btn-primary:focus-visible{
     background-color: #8e44ad !important;
     border-color:#8e44ad !important;
 }
