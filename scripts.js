@@ -33,9 +33,17 @@ const quill = new Quill('#editor', {
 const icon = document.getElementById('chatIcon');
 
 // Add a click event to stop the animation
-icon.addEventListener('click', () => {
-    icon.classList.remove('flash'); // Remove the flashing animation
-    icon.classList.add('clicked'); // Ensure the background returns to its original
+document.addEventListener("DOMContentLoaded", () => {
+    // Select all elements with the class "icon"
+    const icons = document.querySelectorAll('.icon');
+
+    // Add a click event listener to each icon
+    icons.forEach(icon => {
+        icon.addEventListener('click', () => {
+            icon.classList.remove('flash'); // Remove the flashing animation
+            icon.classList.add('clicked'); // Add the clicked class for any custom styles
+        });
+    });
 });
 
 
@@ -194,3 +202,44 @@ inputField.addEventListener("keypress", (e) => {
 
 // Start the chat
 displayNextQuestion();
+
+
+//INPUT TOGGLE
+document.addEventListener("DOMContentLoaded", () => {
+    const chatIcon = document.getElementById("chatIcon");
+    const formIcon = document.getElementById("formIcon");
+    const switchInput = document.getElementById("flexSwitchCheckDefault");
+
+    // Initialize the UI based on localStorage
+    const savedSetting = localStorage.getItem("iconPreference");
+
+    if (savedSetting === "form") {
+        showFormIcon();
+        switchInput.checked = true;
+    } else {
+        showChatIcon();
+        switchInput.checked = false;
+    }
+
+    // Event listener for the switch
+    switchInput.addEventListener("change", () => {
+        if (switchInput.checked) {
+            showFormIcon();
+            localStorage.setItem("iconPreference", "form");
+        } else {
+            showChatIcon();
+            localStorage.setItem("iconPreference", "chat");
+        }
+    });
+
+    // Helper functions
+    function showChatIcon() {
+        chatIcon.style.display = "flex";
+        formIcon.style.display = "none";
+    }
+
+    function showFormIcon() {
+        formIcon.style.display = "flex";
+        chatIcon.style.display = "none";
+    }
+});

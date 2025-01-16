@@ -24,6 +24,9 @@
         <a href="#" class="icon flash" id="chatIcon" data-target="#chatPanel">
             <i class="bi bi-chat-dots"></i>
         </a>
+        <a href="#" class="icon flash" id="formIcon" data-target="#formPanel">
+            <i class="bi bi-textarea-resize"></i>
+        </a>
         <a href="#" id="uploadIcon" data-target="#uploadPanel">
             <i class="bi bi-upload"></i>
         </a>
@@ -60,7 +63,48 @@
         
     </div>
 
+    <!-- FORM -->
+    <div class="expanded-nav flex-column" id="formPanel">
+        
+        <h5 class="p-3 chat-title">Letter Wizard</h5>
 
+        <div class="container my-5 pt-4">
+            <form>
+                <div class="mb-3">
+                    <label for="purpose" class="form-label">What is the purpose of this letter of recommendation? (e.g., college admission, scholarship, job application, etc.)</label>
+                    <input type="text" class="form-control" id="purpose" name="purpose" required>
+                </div>
+                <div class="mb-3">
+                    <label for="studentName" class="form-label">What is the student's full name?</label>
+                    <input type="text" class="form-control" id="studentName" name="studentName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="duration" class="form-label">How long have you known the student?</label>
+                    <input type="text" class="form-control" id="duration" name="duration" required>
+                </div>
+                <div class="mb-3">
+                    <label for="capacity" class="form-label">In what capacity do you know the student?</label>
+                    <input type="text" class="form-control" id="capacity" name="capacity" required>
+                </div>
+                <div class="mb-3">
+                    <label for="academicSkills" class="form-label">What are the student's strongest academic skills?</label>
+                    <textarea class="form-control" id="academicSkills" name="academicSkills" rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="personalQualities" class="form-label">What personal qualities or characteristics make this student stand out?</label>
+                    <textarea class="form-control" id="personalQualities" name="personalQualities" rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="studentDescription" class="form-label">Tell me about this student. What would you like to include in the letter?</label>
+                    <textarea class="form-control" id="studentDescription" name="studentDescription" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        
+    </div>
+
+    <!-- FILE EXPLORER -->
     <div id="fileExplorer" class="expanded-nav">
         <h5 class="p-3">File Explorer</h5>
         <ul class="list-unstyled p-3">
@@ -79,11 +123,16 @@
         </ul>
     </div>
 
+    <!-- SETTINGS -->
     <div id="settingsMenu" class="expanded-nav">
-        <h5 class="p-3">Settings</h5>
+        <h5 class="px-3 pt-3">Settings</h5>
         <p class="p-3">
-          Lorem ipsum...
+            Would you prefer to see all question prompts in a form instead of chat?
         <p>
+        <div class="form-check form-switch mx-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Prompt Form</label>
+        </div>
     </div>
 
     <div id="uploadPanel" class="expanded-nav">
