@@ -26,7 +26,8 @@ document.querySelector('.main-content').addEventListener('click', function() {
 
 //Initialize WYSIIWYG
 const quill = new Quill('#editor', {
-    theme: 'snow'
+    theme: 'snow',
+    placeholder: 'Type your letter here...'
   });
 
 // Select the icon element
